@@ -6,7 +6,7 @@ A simple React + Redux Toolkit project implementing user authentication and CRUD
 bash
 Copy
 Edit
-git clone https://github.com/your-username/reqres-task-management.git
+git clone https://github.com/theEdgeBreaker/employwise_assingment.git
 cd reqres-task-management
 2️⃣ Install Dependencies
 bash
