@@ -1,12 +1,49 @@
-# React + Vite
+Employwise Assingment
+A simple React + Redux Toolkit project implementing user authentication and CRUD operations using the Reqres API.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Getting Started
+1️⃣ Clone the Repository
+bash
+Copy
+Edit
+git clone https://github.com/your-username/reqres-task-management.git
+cd reqres-task-management
+2️⃣ Install Dependencies
+bash
+Copy
+Edit
+npm install
+3️⃣ Run the Project
+bash
+Copy
+Edit
+npm run dev
+The app will be available at: http://localhost:5173
 
-Currently, two official plugins are available:
+📌 Features
+✅ User Login (Email & Password)
+✅ Navigate to User List after successful login
+✅ Fetch and display users using Reqres API
+✅ Edit and delete user functionality
+✅ State management using Redux Toolkit
+✅ Responsive UI with Tailwind CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🛠 API Endpoints Used
+Login: POST https://reqres.in/api/login
 
-## Expanding the ESLint configuration
+Fetch Users (Paginated): GET https://reqres.in/api/users?page=1
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Edit User: PUT https://reqres.in/api/users/{id}
+
+Delete User: DELETE https://reqres.in/api/users/{id}
+
+📌 Assumptions & Considerations
+Users must enter both email and password to enable the login button.
+
+No actual backend is implemented; it simulates authentication using Reqres API.
+
+Users are fetched and displayed in a paginated list.
+
+Edit functionality updates only first name, last name, and email.
+
+Pagination is used instead.
