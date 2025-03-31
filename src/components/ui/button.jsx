@@ -1,7 +1,11 @@
-import { forwardRef } from "react";
 import { cn } from "../../utils/cn";
 
-const Button = forwardRef(({ className, variant = "default", size = "default", ...props }, ref) => {
+const Button = ({
+  className,
+  variant = "default",
+  size = "default",
+  ...props
+}) => {
   const variants = {
     default: "bg-blue-500 text-white hover:bg-blue-600",
     destructive: "bg-red-500 text-white hover:bg-red-600",
@@ -26,12 +30,9 @@ const Button = forwardRef(({ className, variant = "default", size = "default", .
         sizes[size],
         className
       )}
-      ref={ref}
       {...props}
     />
   );
-});
-
-Button.displayName = "Button";
+};
 
 export { Button };

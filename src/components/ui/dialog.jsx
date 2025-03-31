@@ -6,49 +6,43 @@ const Dialog = ({ children, open, onOpenChange }) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black bg-opacity-50">
       <div className="bg-white rounded-lg shadow-lg max-w-md w-full mx-4">
         {React.Children.map(children, (child) =>
-          React.isValidElement(child) ? React.cloneElement(child, { onOpenChange }) : child
+          React.isValidElement(child)
+            ? React.cloneElement(child, { onOpenChange })
+            : child
         )}
       </div>
     </div>
   ) : null;
 };
 
-const DialogContent = React.forwardRef(({ children, className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn("p-6", className)}
-    {...props}
-  >
+const DialogContent = ({ children, className, ...props }) => (
+  <div className={cn("p-6", className)} {...props}>
     {children}
   </div>
-));
-DialogContent.displayName = "DialogContent";
+);
 
-const DialogHeader = React.forwardRef(({ className, ...props }, ref) => (
+const DialogHeader = ({ className, ...props }) => (
   <div
-    ref={ref}
-    className={cn("flex flex-col space-y-1.5 text-center sm:text-left", className)}
+    className={cn(
+      "flex flex-col space-y-1.5 text-center sm:text-left",
+      className
+    )}
     {...props}
   />
-));
-DialogHeader.displayName = "DialogHeader";
+);
 
-const DialogTitle = React.forwardRef(({ className, ...props }, ref) => (
-  <h3
-    ref={ref}
-    className={cn("text-lg font-semibold", className)}
-    {...props}
-  />
-));
-DialogTitle.displayName = "DialogTitle";
+const DialogTitle = ({ className, ...props }) => (
+  <h3 className={cn("text-lg font-semibold", className)} {...props} />
+);
 
-const DialogFooter = React.forwardRef(({ className, ...props }, ref) => (
+const DialogFooter = ({ className, ...props }) => (
   <div
-    ref={ref}
-    className={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 mt-4", className)}
+    className={cn(
+      "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 mt-4",
+      className
+    )}
     {...props}
   />
-));
-DialogFooter.displayName = "DialogFooter";
+);
 
 export { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter };
