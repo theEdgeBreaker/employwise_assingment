@@ -46,4 +46,3 @@ Users are fetched and displayed in a paginated list.
 
 Edit functionality updates only first name, last name, and email.
 
-Pagination is used instead.
